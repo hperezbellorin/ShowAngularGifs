@@ -1,3 +1,5 @@
+import { Gif } from './../../interfaces/gits.interfaces';
+import { GifsService } from './../../services/gifs.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
 
 })
 export class HomePageComponent {
+
+  constructor(private gifsService: GifsService) {
+
+
+  }
+
+  get gifs(): Gif  []{
+    return this.gifsService.gifList;
+  }
 
 }
